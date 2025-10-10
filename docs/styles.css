@@ -14,8 +14,9 @@
     --color-charcoal: #1a1a1a;
     --color-dark-gray: #2a2a2a;
     --color-white: #ffffff;
-    --color-electric-blue: #00d4ff;
-    --color-electric-blue-hover: #00b8e6;
+    --color-electric-blue: #4341b1;
+    --color-electric-blue-hover: #3f3a8d;
+    --color-electric-blue-gradient-end: #b14166;
     
     /* Typography */
     --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
@@ -168,11 +169,15 @@ body {
     margin-bottom: var(--spacing-md);
     letter-spacing: -1px;
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-electric-blue) 100%);
+    color: var(--color-white);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.key-text {
+    background: linear-gradient(135deg, var(--color-electric-blue) 0%, var(--color-electric-blue-gradient-end) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: fadeInUp 0.8s ease-out;
 }
 
 .subtitle {
@@ -183,27 +188,27 @@ body {
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
-.btn-download {
+.btn-cta {
     display: inline-block;
     padding: 1rem 3rem;
-    background-color: var(--color-electric-blue);
-    color: var(--color-black);
+    background: linear-gradient(135deg, var(--color-electric-blue) 0%, var(--color-electric-blue-gradient-end) 100%);
+    color: var(--color-white);
     text-decoration: none;
     font-size: 1.125rem;
     font-weight: 600;
     border-radius: 50px;
     transition: var(--transition-smooth);
-    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(187, 70, 76, 0.3);
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
-.btn-download:hover {
-    background-color: var(--color-electric-blue-hover);
+.btn-cta:hover {
+    background: linear-gradient(135deg, var(--color-electric-blue-hover) 0%, var(--color-electric-blue) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 6px 30px rgba(187, 70, 76, 0.5);
 }
 
-.btn-download:active {
+.btn-cta:active {
     transform: translateY(0);
 }
 
@@ -361,7 +366,7 @@ body {
     position: absolute;
     width: 100%;
     text-align: center;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-white);
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 400;
     opacity: 0;
@@ -487,6 +492,75 @@ body {
 }
 
 /* =====================
+   Downloads Section
+   ===================== */
+
+.downloads-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.downloads-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.download-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    height: 70px;
+    justify-content: flex-start;
+}
+
+.coming-soon-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+    margin-top: var(--spacing-xs);
+}
+
+.btn-download-simple {
+    display: inline-block;
+    width: 200px;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-electric-blue) 0%, var(--color-electric-blue-gradient-end) 100%);
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px rgba(67, 65, 177, 0.3);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-download-simple:hover:not(.btn-disabled) {
+    background: linear-gradient(135deg, var(--color-electric-blue-hover) 0%, var(--color-electric-blue) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 65, 177, 0.4);
+}
+
+.btn-download-simple:active:not(.btn-disabled) {
+    transform: translateY(0);
+}
+
+.btn-disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* =====================
    Footer
    ===================== */
 
@@ -575,7 +649,7 @@ body {
         height: 48px;
     }
 
-    .btn-download {
+    .btn-cta {
         padding: 0.875rem 2rem;
         font-size: 1rem;
     }
@@ -586,6 +660,11 @@ body {
 
     .carousel-slide {
         width: 260px;
+    }
+
+    .downloads-container {
+        flex-direction: column;
+        gap: var(--spacing-lg);
     }
 
     .carousel-btn {

@@ -290,22 +290,22 @@
     }
 
     // =====================
-    // Download Button Analytics (Placeholder)
+    // CTA Button Analytics (Placeholder)
     // =====================
     
-    const downloadButton = document.querySelector('.btn-download');
+    const ctaButton = document.querySelector('.btn-cta');
     
-    if (downloadButton) {
-        downloadButton.addEventListener('click', function(e) {
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
             // Placeholder for analytics tracking
-            console.log('Download button clicked');
+            console.log('CTA button clicked');
             
             // If you want to prevent default behavior (for now it's just a link)
             // e.preventDefault();
             
             // Here you would typically:
             // 1. Track the event with analytics
-            // 2. Trigger a download
+            // 2. Navigate to download section
             // 3. Show a modal or notification
         });
     }
