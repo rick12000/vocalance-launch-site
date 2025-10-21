@@ -1,0 +1,4 @@
+All .png files in the docs/assets/icons/ directory are obtained from Google Material Design Icons and used according to the license in the directory's LICENSE.txt file.
+Icons can be accessed on: https://fonts.google.com/icons
+With repository at: https://github.com/google/material-design-icons
+This is accurate as of 21/10/2025.

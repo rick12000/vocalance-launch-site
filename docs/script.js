@@ -1,5 +1,5 @@
 /**
- * Iris Launch Site - Main JavaScript
+ * Vocalance Launch Site - Main JavaScript
  * Handles smooth scrolling, navigation effects, and animations
  */
 
@@ -363,7 +363,7 @@
     handleNavbarScroll();
     highlightNavigation();
     
-    console.log('Iris Launch Site initialized successfully');
+    console.log('Vocalance Launch Site initialized successfully');
 
 })();
 
