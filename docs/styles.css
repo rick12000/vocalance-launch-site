@@ -470,7 +470,7 @@ body {
    ===================== */
 
 .comparison-section {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
     max-width: 1200px;
     margin: 0 auto;
     min-height: 60vh;
@@ -481,7 +481,7 @@ body {
 
 .comparison-content {
     max-width: 800px;
-    margin: var(--spacing-lg) auto 0;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -491,12 +491,110 @@ body {
     line-height: 1.8;
 }
 
+/* Comparison Table Styles */
+.comparison-table-container {
+    overflow-x: auto;
+    margin-top: var(--spacing-sm);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    min-width: 600px;
+}
+
+.comparison-table thead {
+    background: linear-gradient(135deg, var(--color-electric-blue) 0%, var(--color-electric-blue-gradient-end) 100%);
+}
+
+.comparison-table th {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-white);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    min-width: 120px; /* Minimum width to fit longest content */
+}
+
+.comparison-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition-smooth);
+}
+
+.comparison-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.comparison-table td {
+    padding: 0.5rem 1rem;
+    color: var(--color-white);
+    vertical-align: middle;
+    min-width: 120px; /* Minimum width to fit longest content */
+}
+
+/* Subtle Vocalance column highlighting */
+.comparison-table tbody td:nth-child(2) {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 2px solid var(--color-electric-blue);
+}
+
+.feature-name {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.vocalance-value {
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table tbody td:not(.feature-name):not(.vocalance-value) {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+/* Checkmark and cross styling */
+.comparison-table td {
+    font-size: 1.1em;
+}
+
+/* Responsive adjustments for table */
+@media (max-width: 768px) {
+    .comparison-table-container {
+        margin: var(--spacing-md) -1rem 0;
+        border-radius: 8px;
+    }
+
+    .comparison-table {
+        font-size: 0.85rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.4rem 0.5rem;
+    }
+}
+
 /* =====================
    Downloads Section
    ===================== */
 
 .downloads-section {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
     max-width: 1200px;
     margin: 0 auto;
 }
