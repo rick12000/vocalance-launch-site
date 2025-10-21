@@ -405,7 +405,7 @@ body {
    ===================== */
 
 .features-section {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: 2.5rem var(--spacing-md);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -507,7 +507,7 @@ body {
    ===================== */
 
 .comparison-section {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: 2rem var(--spacing-md);
     max-width: 1200px;
     margin: 0 auto;
     min-height: 60vh;
@@ -631,7 +631,7 @@ body {
    ===================== */
 
 .downloads-section {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: 2rem var(--spacing-md) 5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -700,9 +700,13 @@ body {
    ===================== */
 
 .demo-section {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: 2.5rem var(--spacing-md);
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.demo-section .section-title {
+    margin-bottom: var(--spacing-md);
 }
 
 .demo-subtitle {
@@ -758,6 +762,12 @@ body {
     border-top: 1px solid var(--color-dark-gray);
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.9rem;
+}
+
+.footer p:first-child {
+    font-size: 1rem;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
 }
 
 /* =====================
