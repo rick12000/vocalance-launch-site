@@ -598,6 +598,14 @@ body {
     font-weight: 600;
 }
 
+.table-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    filter: brightness(0) invert(1); /* Make logo white to match table header text */
+}
+
 .comparison-table tbody td:not(.feature-name):not(.vocalance-value) {
     text-align: center;
     color: rgba(255, 255, 255, 0.7);
