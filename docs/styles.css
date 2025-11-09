@@ -129,6 +129,55 @@ body {
     width: 100%;
 }
 
+/* Dropdown Menu Styles */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-dark-gray);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    white-space: nowrap;
+}
+
+.dropdown-link:hover {
+    background-color: rgba(67, 65, 177, 0.2);
+    color: var(--color-electric-blue);
+}
+
 /* =====================
    Hero Section
    ===================== */
@@ -811,6 +860,16 @@ body {
 
     .nav-link {
         font-size: 0.9rem;
+    }
+
+    .dropdown-menu {
+        left: auto;
+        right: 0;
+        transform: none;
+    }
+
+    .nav-dropdown {
+        position: relative;
     }
     
     .hero {

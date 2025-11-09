@@ -1,0 +1,186 @@
+/* =====================
+   FAQ Page Specific Styles
+   ===================== */
+
+/* FAQ Hero Section */
+.faq-hero {
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(80px + var(--spacing-lg)) var(--spacing-md) var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-black) 0%, var(--color-charcoal) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(67, 65, 177, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Main FAQ Content */
+.faq-content {
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-container {
+    width: 100%;
+}
+
+/* FAQ Items */
+.faq-item {
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, rgba(40, 40, 45, 0.8) 0%, rgba(45, 45, 50, 0.8) 100%);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4341b1 0%, #00d4ff 50%, #b14166 100%);
+    padding: 2px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.faq-item:hover::before {
+    background: linear-gradient(135deg, #4341b1 0%, #00d4ff 50%, #b14166 100%);
+}
+
+.faq-item:hover {
+    background: linear-gradient(135deg, rgba(50, 50, 55, 0.9) 0%, rgba(55, 55, 60, 0.9) 100%);
+}
+
+/* FAQ Header (Question) */
+.faq-header {
+    padding: 1.5rem var(--spacing-md);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-smooth);
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.faq-header:hover {
+    background: transparent;
+}
+
+.faq-question {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    color: var(--color-white);
+    margin: 0;
+}
+
+.toggle-icon {
+    color: #00d4ff;
+    transition: transform 0.3s ease;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.faq-header.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* FAQ Body (Answer) */
+.faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    padding: 0 var(--spacing-md);
+}
+
+.faq-body.active {
+    max-height: 1000px;
+    padding: var(--spacing-md);
+    background: rgba(30, 30, 35, 0.4);
+}
+
+.faq-answer {
+    font-size: 1.0625rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* FAQ Links */
+.faq-answer a {
+    color: #87ceeb; /* Lighter blue color */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.faq-answer a:hover {
+    color: #add8e6; /* Even lighter blue on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Design for FAQ */
+@media (max-width: 768px) {
+    .faq-hero {
+        min-height: 30vh;
+        padding: calc(80px + var(--spacing-md)) var(--spacing-sm) var(--spacing-sm);
+    }
+
+    .faq-content {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .faq-header {
+        padding: 1rem var(--spacing-sm);
+    }
+
+    .faq-question {
+        font-size: 1.125rem;
+    }
+
+    .faq-body.active {
+        padding: var(--spacing-sm);
+    }
+
+    .toggle-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-question {
+        font-size: 1rem;
+    }
+
+    .faq-answer {
+        font-size: 0.95rem;
+    }
+
+    .toggle-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+}
