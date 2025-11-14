@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vocalance - Instructions for using the application">
+    <title>Vocalance - Instructions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="instructions-styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/vocalance_logo_full_size.png" alt="Vocalance Logo" class="logo-image">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#features" class="nav-link">Features</a></li>
+                <li><a href="index.html#demo" class="nav-link">Demo</a></li>
+                <li><a href="index.html#comparison" class="nav-link">Comparison</a></li>
+                <li><a href="index.html#downloads" class="nav-link">Download</a></li>
+                <li class="nav-dropdown">
+                    <a href="instructions.html" class="nav-link">Instructions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#commands" class="dropdown-link">Commands</a></li>
+                        <li><a href="#marks" class="dropdown-link">Marks</a></li>
+                        <li><a href="#sounds" class="dropdown-link">Sounds</a></li>
+                        <li><a href="#dictation" class="dropdown-link">Dictation</a></li>
+                        <li><a href="#grid" class="dropdown-link">Grid</a></li>
+                    </ul>
+                </li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Instructions Hero Section -->
+    <section class="instructions-hero">
+        <div class="hero-content">
+            <h1 class="tagline">User <span class="key-text">Guide</span></h1>
+            <p class="subtitle">Look through each section to learn more about Vocalance</p>
+        </div>
+    </section>
+
+    <!-- Main Instructions Content -->
+    <section class="instructions-content">
+        <div class="content-container">
+            
+            <!-- Commands Section -->
+            <div id="commands" class="instruction-section">
+                <div class="section-header" data-section="commands">
+                    <h2 class="section-title-inst">Commands</h2>
+                    <span class="toggle-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </span>
+                </div>
+                <div class="section-content">
+                    <p class="section-intro">Vocalance provides a comprehensive set of automation commands that can be triggered by voice. Commands are organized into functional groups for easy reference.</p>
+                    
+                    <!-- Basic Commands -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="basic">
+                            <h3 class="subsection-title">Basic</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <div class="command-table">
+                                <div class="command-row command-header">
+                                    <div class="command-phrase">Command Phrase</div>
+                                    <div class="command-description">Description</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>click</code></div>
+                                    <div class="command-description">Perform a left mouse click at current mouse cursor position</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>right click</code></div>
+                                    <div class="command-description">Perform a right mouse click at current mouse cursor position</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>double click</code></div>
+                                    <div class="command-description">Perform a double left mouse click at current mouse cursor position</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>triple click</code></div>
+                                    <div class="command-description">Perform a triple left mouse click at current mouse cursor position</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>up</code></div>
+                                    <div class="command-description">Press the up arrow key</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>down</code></div>
+                                    <div class="command-description">Press the down arrow key</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>left</code></div>
+                                    <div class="command-description">Press the left arrow key</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>right</code></div>
+                                    <div class="command-description">Press the right arrow key</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>wind</code></div>
+                                    <div class="command-description">Press the page up key (use to scroll up)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>ground</code></div>
+                                    <div class="command-description">Press the page down key (use to scroll down)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>sky</code></div>
+                                    <div class="command-description">Scroll upward using mouse scroll wheel</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>earth</code></div>
+                                    <div class="command-description">Scroll downward using mouse scroll wheel</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>escape</code></div>
+                                    <div class="command-description">Press the escape key</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>zoom</code></div>
+                                    <div class="command-description">Increase zoom level</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>zoom out</code></div>
+                                    <div class="command-description">Decrease zoom level</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>search</code></div>
+                                    <div class="command-description">Search for text in the current file</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>back space</code></div>
+                                    <div class="command-description">Press the backspace key</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Editing Commands -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="editing">
+                            <h3 class="subsection-title">Editing</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <div class="command-table">
+                                <div class="command-row command-header">
+                                    <div class="command-phrase">Command Phrase</div>
+                                    <div class="command-description">Description</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>save</code></div>
+                                    <div class="command-description">Save the current file</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>copy</code></div>
+                                    <div class="command-description">Copy selected text or content to clipboard</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>paste</code></div>
+                                    <div class="command-description">Paste content from clipboard</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>select all</code></div>
+                                    <div class="command-description">Select all content in the current context</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>wipe</code></div>
+                                    <div class="command-description">Undo the last action</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>redo</code></div>
+                                    <div class="command-description">Redo the last undone action</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>enter</code></div>
+                                    <div class="command-description">Press the enter key</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>delete</code></div>
+                                    <div class="command-description">Press the delete key</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>tab</code></div>
+                                    <div class="command-description">Press the tab key</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>space</code></div>
+                                    <div class="command-description">Press the space bar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Window Navigation Commands -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="window-navigation">
+                            <h3 class="subsection-title">Window Navigation</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <div class="command-table">
+                                <div class="command-row command-header">
+                                    <div class="command-phrase">Command Phrase</div>
+                                    <div class="command-description">Description</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>web open</code></div>
+                                    <div class="command-description">Open a new browser tab (also works in VSCode or other tabbed applications)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>web close</code></div>
+                                    <div class="command-description">Close the current browser tab (also works in VSCode or other tabbed applications)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>close</code></div>
+                                    <div class="command-description">Close the currently active window</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>minimize</code></div>
+                                    <div class="command-description">Minimize the currently active window to the taskbar</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>web reopen</code></div>
+                                    <div class="command-description">Reopen the last closed browser tab</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>web right</code></div>
+                                    <div class="command-description">Open the browser tab to the right of the current browser tab (also works in VSCode or other tabbed applications)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>web left</code></div>
+                                    <div class="command-description">Open the browser tab to the left of the current browser tab (also works in VSCode or other tabbed applications)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>back</code></div>
+                                    <div class="command-description">If triggered on a browser, goes back to the previous page. If triggered in a coding IDE, goes back to the previous cursor position.</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>jet</code></div>
+                                    <div class="command-description">If triggered on a browser, goes forward to the next page. If triggered in a coding IDE, goes forward to the next cursor position.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- General IDE Commands -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="general-ide">
+                            <h3 class="subsection-title">General IDE</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <div class="command-table">
+                                <div class="command-row command-header">
+                                    <div class="command-phrase">Command Phrase</div>
+                                    <div class="command-description">Description</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>save all</code></div>
+                                    <div class="command-description">Save all open files</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>close all</code></div>
+                                    <div class="command-description">Close all open files</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>references</code></div>
+                                    <div class="command-description">Shows code references for the selected variable (trigger if your cursor is on a variable)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>rename</code></div>
+                                    <div class="command-description">Rename the selected variable (trigger if your cursor is on a variable)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>definition</code></div>
+                                    <div class="command-description">Shows where the selected variable is defined (trigger if your cursor is on a variable)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>code search</code></div>
+                                    <div class="command-description">Opens file search in IDE (if you trigger this when your cursor is highlighting some text, it will automatically search for that text across files)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>old</code></div>
+                                    <div class="command-description">If triggered on a browser, goes to tab to the left of the current tab. If triggered in a coding IDE, goes to the file tab to the left of the current file.</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>new</code></div>
+                                    <div class="command-description">If triggered on a browser, goes to tab to the right of the current tab. If triggered in a coding IDE, goes to the file tab to the right of the current file.</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>explore</code></div>
+                                    <div class="command-description">Open the files panel in coding IDEs</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cursor IDE Commands -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="cursor-ide">
+                            <h3 class="subsection-title">Cursor IDE</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <div class="command-table">
+                                <div class="command-row command-header">
+                                    <div class="command-phrase">Command Phrase</div>
+                                    <div class="command-description">Description</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square ask</code></div>
+                                    <div class="command-description">Toggle in line AI Chat in Cursor</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square new</code></div>
+                                    <div class="command-description">Open a new AI chat in Cursor</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square mode</code></div>
+                                    <div class="command-description">Cycle through Cursor Chat AI modes [Agent, Plan, Ask] (only trigger if you're in the context of a chat)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square models</code></div>
+                                    <div class="command-description">Open AI model selection menu in Cursor Chat (only trigger if you're in the context of a chat)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square context</code></div>
+                                    <div class="command-description">Open context drop down in Cursor Chat (only trigger if you're in the context of a chat)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square next</code></div>
+                                    <div class="command-description">Move to next AI changed section in Cursor</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square previous</code></div>
+                                    <div class="command-description">Move to previous AI changed section in Cursor</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square keep line</code></div>
+                                    <div class="command-description">Keep edit at given or next highlighted code section in Cursor (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square drop line</code></div>
+                                    <div class="command-description">Reject edit at given or next highlighted code section in Cursor (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square keep file</code></div>
+                                    <div class="command-description">Keep edits in the current file in Cursor (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>square reject file</code></div>
+                                    <div class="command-description">Reject edits in the current file in Cursor (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VSCode IDE Commands -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="vscode-ide">
+                            <h3 class="subsection-title">VSCode IDE</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <div class="command-table">
+                                <div class="command-row command-header">
+                                    <div class="command-phrase">Command Phrase</div>
+                                    <div class="command-description">Description</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue ask</code></div>
+                                    <div class="command-description">Toggle in line AI Chat in VSCode</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue new</code></div>
+                                    <div class="command-description">Open a new AI chat in VSCode (only trigger if you're in the context of a chat)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue context</code></div>
+                                    <div class="command-description">Open context drop down in Copilot Chat (only trigger if you're in the context of a chat)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue talk</code></div>
+                                    <div class="command-description">Activate microphone in Copilot Chat (only trigger if you're in the context of a chat)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue models</code></div>
+                                    <div class="command-description">Open AI model selection menu in Copilot Chat (only trigger if you're in the context of a chat)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue next</code></div>
+                                    <div class="command-description">Move to next AI changed section in VSCode (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue previous</code></div>
+                                    <div class="command-description">Move to previous AI changed section in VSCode (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue keep line</code></div>
+                                    <div class="command-description">Keep edit at given or next highlighted code section in VSCode (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue drop line</code></div>
+                                    <div class="command-description">Reject edit at given or next highlighted code section in VSCode (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue keep file</code></div>
+                                    <div class="command-description">Keep edits in the current file in VSCode (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                                <div class="command-row">
+                                    <div class="command-phrase"><code>blue reject file</code></div>
+                                    <div class="command-description">Reject edits in the current file in VSCode (only trigger if you are on a file with AI changes)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Command Parametrization -->
+                    <div class="parametrization-section">
+                        <h3 class="parametrization-title">Command Parametrization</h3>
+                        <p class="parametrization-description">You can repeat any command multiple times by saying a number after the command phrase. For example:</p>
+                        <ul class="parametrization-list">
+                            <li><strong>"click 3"</strong> - Performs 3 left clicks</li>
+                            <li><strong>"down 5"</strong> - Presses the down arrow key 5 times</li>
+                            <li><strong>"earth 10"</strong> - Scrolls down 10 times</li>
+                            <li><strong>"tab 2"</strong> - Presses the tab key 2 times</li>
+                        </ul>
+                        <p class="parametrization-note">This works with any automation command - simply say the command phrase followed by the number of times you want it to repeat.</p>
+                    </div>
+
+                    <!-- Add Custom Command Section -->
+                    <div class="custom-command-section">
+                        <h3 class="custom-command-title">Add Custom Command</h3>
+                        <p class="custom-command-description">You can add your own commands by going to the Commands tab in the sidebar and:</p>
+                        <ol class="custom-command-steps">
+                            <li>Choosing what your trigger word for this command will be in the Command Phrase field.</li>
+                            <li>Choosing what keyboard hot key Vocalance should execute when you say the trigger word.</li>
+                        </ol>
+                        <div class="screenshot-container">
+                            <img src="assets/instructions_screenshots/add_custom_command_1.png" alt="Add Custom Command Interface" class="centered-screenshot">
+                        </div>
+                        <p class="custom-command-note">The added command will be displayed in the Manage Commands box, under the "Custom" divider:</p>
+                        <div class="screenshot-container">
+                            <img src="assets/instructions_screenshots/add_custom_command_2.png" alt="Manage Commands Interface" class="centered-screenshot">
+                        </div>
+                    </div>
+
+                    <!-- Edit Command Phrases Section -->
+                    <div class="edit-command-section">
+                        <h3 class="edit-command-title">Edit Command Phrases</h3>
+                        <p class="edit-command-description">You can change the command phrases of any Vocalance command in the Commands tab by:</p>
+                        <ol class="edit-command-steps">
+                            <li>Navigating the Manage Commands box until you find the command whose command phrase you want to change.</li>
+                            <li>Clicking the Info button.</li>
+                            <li>Changing the command phrase in the Edit Command Phrase field.</li>
+                            <li>Clicking Save Changes.</li>
+                        </ol>
+                        <p class="edit-command-note">Optionally, you can also delete commands from this window, though that only applies to custom commands (built in commands can't be deleted).</p>
+                        <div class="screenshot-container">
+                            <img src="assets/instructions_screenshots/edit_command.png" alt="Edit Command Interface" class="centered-screenshot">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Marks Section -->
+            <div id="marks" class="instruction-section">
+                <div class="section-header" data-section="marks">
+                    <h2 class="section-title-inst">Marks</h2>
+                    <span class="toggle-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </span>
+                </div>
+                <div class="section-content">
+                    <p class="section-intro">Marks allow you to save parts of the screen you click on frequently and reference them by name. Find out more about marks below!</p>
+
+                    <!-- Create Marks Sub Section -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="create-marks">
+                            <h3 class="subsection-title">Create Marks</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <ol class="custom-command-steps">
+                                <li>Move your cursor to the screen location at which you want to create a mark.</li>
+                            </ol>
+                            <div class="screenshot-container">
+                                <img src="assets/instructions_screenshots/mark_creation_1.png" alt="Move cursor to mark location" class="centered-screenshot">
+                            </div>
+                            <ol class="custom-command-steps">
+                                <li>Say "mark X" where X is the name you want to give to your mark (eg. "mark chrome" to create a mark on the chrome icon in the taskbar).</li>
+                                <li>Move your mouse anywhere else on screen.</li>
+                            </ol>
+                            <div class="screenshot-container">
+                                <img src="assets/instructions_screenshots/mark_creation_2.png" alt="Mark creation interface" class="centered-screenshot">
+                            </div>
+                            <ol class="custom-command-steps">
+                                <li>Say the name of your mark (eg. "chrome"). This should now move your cursor to your mark location on screen and execute a click of the mouse at that location.</li>
+                            </ol>
+                            <div class="screenshot-container">
+                                <img src="assets/instructions_screenshots/mark_creation_3.png" alt="Mark activation result" class="centered-screenshot">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manage Marks Sub Section -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="manage-marks">
+                            <h3 class="subsection-title">Manage Marks</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <p class="custom-command-description">If you already created some marks and are wondering how to manage them, go to the Marks tab in the sidebar:</p>
+                            <div class="screenshot-container">
+                                <img src="assets/instructions_screenshots/manage_marks_1.png" alt="Marks tab in sidebar" class="centered-screenshot">
+                            </div>
+                            <p class="custom-command-description">Here you can:</p>
+                            <ol class="custom-command-steps">
+                                <li>Delete an individual mark by clicking the Delete button.</li>
+                                <li>Delete all marks at once to restart fresh with the Delete All Marks button.</li>
+                                <li>Visualize where your marks are on the screen by clicking the Show Marks button (or you can say "show marks" at any time). To exit the show marks overlay, either press the escape key, or say "escape".</li>
+                            </ol>
+                            <div class="screenshot-container">
+                                <img src="assets/instructions_screenshots/manage_marks_2.png" alt="Marks visualization overlay" class="centered-screenshot">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Sounds Section -->
+            <div id="sounds" class="instruction-section">
+                <div class="section-header" data-section="sounds">
+                    <h2 class="section-title-inst">Sounds</h2>
+                    <span class="toggle-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </span>
+                </div>
+                <div class="section-content">
+                    <p class="section-intro">You can control Vocalance with non verbal sounds if that's easier for you!</p>
+
+                    <div class="sounds-section">
+                        <p class="sounds-description">To do so:</p>
+                        <div class="sounds-instructions-wrapper">
+                            <ol class="sounds-steps">
+                                <li>Move to the Sounds tab in the sidebar.</li>
+                                <li>Give your prospective sound a name (you won't speak this name, it's just for you to remember what's what).</li>
+                                <li>Select the number of times you want to make the sound during training (default is 5, but you can increase to give the model more data).</li>
+                            </ol>
+                            <div class="screenshot-container">
+                                <img src="assets/instructions_screenshots/add_custom_sound_1.png" alt="Add Custom Sound Interface" class="centered-screenshot">
+                            </div>
+                            <ol class="sounds-steps">
+                                <li>Click Record.</li>
+                                <li>Make your sound, wait for the model to prompt you again, then make the sound again, for as many times as the model asks (the last time there might be a small delay, please still only make the sound once per prompt).</li>
+                            </ol>
+                        </div>
+                        <p class="sounds-note">After the model has trained, you should see your trained sound in the Manage Sounds box to the right:</p>
+                        <div class="screenshot-container">
+                            <img src="assets/instructions_screenshots/map_sound_1.5.png" alt="Trained Sound in Manage Sounds" class="centered-screenshot">
+                        </div>
+                        <p class="sounds-note">Your sound now exists, but isn't mapped to any command. To associate a sound to a command (so that when you make the sound, Vocalance executes that command), locate your sound and click on Map:</p>
+                        <div class="screenshot-container">
+                            <img src="assets/instructions_screenshots/map_sound_1.png" alt="Map Sound Interface" class="centered-screenshot">
+                        </div>
+                        <p class="sounds-description">The current mapping for the sound will display as unmapped, and you will be asked to enter a Command Type and Command Value. The Command Type can be one of "Commands" (all the Vocalance commands from the Commands instructions on this page), "Marks" (any custom mark you create on screen), or "Grid" (this only has one option, which activates the grid overlay). Select a Command Type first, then select from the available Command Values.</p>
+                        <p class="sounds-note">When you're happy click Confirm. Now try make your sound and see if it executes your command value!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dictation Section -->
+            <div id="dictation" class="instruction-section">
+                <div class="section-header" data-section="dictation">
+                    <h2 class="section-title-inst">Dictation</h2>
+                    <span class="toggle-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </span>
+                </div>
+                <div class="section-content">
+                    <p class="section-intro">Vocalance offers four types of dictation modes, each optimized for different use cases.</p>
+                    
+                    <!-- Fast Dictation Mode -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="fast-dictation">
+                            <h3 class="subsection-title">Fast Dictation</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <p class="section-intro">This is a quick dictation mode for when you want to perform a fast google search, or jot down a thought. To use it:</p>
+                            <ol class="dictation-steps">
+                                <li>Make sure your cursor is on a location in which you can type text:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_cursor.png" alt="Cursor ready for dictation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Say the activation phrase <code class="command-code">type</code>. This will start dictation.</li>
+                                <li>Wait for a pop up to appear in the bottom left of the screen, confirming Vocalance is listening for audio:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_listening.png" alt="Vocalance listening confirmation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Start speaking.</li>
+                                <li>As soon as you pause for more than 1 second, the dictation will self-interrupt, and Vocalance will paste what you said at the cursor location:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_output.png" alt="Dictation output pasted" class="centered-screenshot">
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Incremental Dictation Mode -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="incremental-dictation">
+                            <h3 class="subsection-title">Incremental Dictation</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <p class="section-intro">This dictation mode is meant for every day dictation needs (notes, essays, messages, etc.). It's less accurate than Vocalance's Full Dictation mode, but allows you to edit text in real time and move the cursor and dictate dynamically. To use it:</p>
+                            <ol class="dictation-steps">
+                                <li>Make sure your cursor is on a location in which you can type text:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_cursor.png" alt="Cursor ready for dictation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Say the activation phrase <code class="command-code">green</code>. This will start dictation.</li>
+                                <li>Wait for a pop up to appear in the bottom left of the screen, confirming Vocalance is listening for audio:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_listening.png" alt="Vocalance listening confirmation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Start speaking.</li>
+                                <li>When you pause for more than 2 seconds, the words you said since the last 2 second pause will be pasted at the cursor location:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_output.png" alt="Dictation output pasted" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>When you're done with dictation, say the stop phrase <code class="command-code">amber</code>.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Full Dictation Mode -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="full-dictation">
+                            <h3 class="subsection-title">Full Dictation</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <p class="section-intro">This dictation mode is meant for high quality transcription, but allows less real-time editing than Vocalance's Incremental Dictation mode. To use it:</p>
+                            <ol class="dictation-steps">
+                                <li>Make sure your cursor is on a location in which you can type text:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_cursor.png" alt="Cursor ready for dictation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Say the activation phrase <code class="command-code">visual green</code>. This will start dictation.</li>
+                                <li>Wait for a pop up dictation window to appear on screen:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/visual_dictation_ui.png" alt="Visual dictation window" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Start speaking. The words you say will appear in near-real time in the dictation window:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/visual_dictation_grey.png" alt="Grey text in dictation window" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>At first text will appear as grey. As you speak more, or as you stay silent, grey text becomes white. This indicates the model is finished with that segment and is confident that's what you said:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/visual_dictation_white.png" alt="White text in dictation window" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Both white and grey text counts as valid transcription, but white text is unchangeable, while grey text can change as you speak.</li>
+                                <li>Once you're happy with what's in the dictation window (both white and grey text, you don't need to wait for everything to turn white), say the stop phrase <code class="command-code">amber</code>. This will automatically paste all the text in the dictation window at your cursor location.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Smart Dictation Mode -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="smart-dictation">
+                            <h3 class="subsection-title">Smart Dictation</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <p class="section-intro">This is Vocalance's most advanced and flexible dictation mode. Smart Dictation first transcribes everything you say, then passes the output to an AI model (this model is open source and runs entirely on your computer, no data leaves your machine), which will apply a clean up prompt to the text.</p>
+                            
+                            <div class="info-block">
+                                <h4>What's the Clean Up Prompt?</h4>
+                                <p>Vocalance ships with a default prompt that fixes grammar, punctuation, and improves clarity. However, you can specify any custom prompt you want! For example, you could create a prompt that formats text for emails, technical documentation, creative writing, or any other use case. Click on the 'Manage AI Prompts' section below to learn more!</p>
+                            </div>
+
+                            <!-- Manage AI Prompts Subsection -->
+                            <div class="smart-dictation-subsection">
+                                <div class="smart-dictation-header" data-subsection="manage-ai-prompts">
+                                    <h4 class="smart-dictation-subtitle">Manage AI Prompts</h4>
+                                    <span class="toggle-icon-small">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="smart-dictation-content">
+                                    <ol class="dictation-steps">
+                                        <li>You can manage the AI model's prompts from the Dictation tab of the Vocalance menu:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation.png" alt="Dictation tab in Vocalance menu" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Vocalance ships with a built-in 'Default' prompt, which makes the AI model clean up your grammar, punctuation and improve sentence clarity.</li>
+                                        <li>If you want to add your own prompt, select a Prompt Title and provide some Prompt Instructions for the AI Model in the Add Custom Prompt panel:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_prompt_creation.png" alt="Add Custom Prompt panel" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>When you click 'Add', the prompt will appear alongside the default prompt on the Manage Prompts panel:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_prompt_addition.png" alt="Prompt added to Manage Prompts" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>To use your new prompt, click on the radio button next to it:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_prompt_selection.png" alt="Prompt selected" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Vocalance will now use your prompt going forward instead of the default one. This is persistent, meaning smart dictation will continue to use this prompt until you select a different one.</li>
+                                        <li>You can add as many prompts as you want, and switch between them to match your use case.</li>
+                                    </ol>
+                                </div>
+                            </div>
+
+                            <!-- Start Dictating Subsection -->
+                            <div class="smart-dictation-subsection">
+                                <div class="smart-dictation-header" data-subsection="start-smart-dictating">
+                                    <h4 class="smart-dictation-subtitle">Start Dictating</h4>
+                                    <span class="toggle-icon-small">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="smart-dictation-content">
+                                    <p class="section-intro">For this walkthrough we will be using the 'Email' AI prompt we created in the 'Manage AI Prompts' section.</p>
+                                    <ol class="dictation-steps">
+                                        <li>Make sure your cursor is on a location in which you can type text:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/dictation_cursor.png" alt="Cursor ready for dictation" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Say the activation phrase <code class="command-code">smart green</code>. This will start dictation.</li>
+                                        <li>Wait for a pop up dictation window to appear on screen:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_ui.png" alt="Smart dictation window" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Start speaking. The words you say will appear in near-real time in the left dictation panel:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_grey.png" alt="Grey text in smart dictation window" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>At first text will appear as grey. As you speak more, or as you stay silent, grey text becomes white. This indicates the model is finished with that segment and is confident that's what you said.</li>
+                                        <li>Both white and grey text counts as valid transcription, but white text is unchangeable, while grey text can change as you speak.</li>
+                                        <li>Once you're happy with what's in the dictation window (both white and grey text, you don't need to wait for everything to turn white), say the stop phrase <code class="command-code">amber</code>. This interrupts the dictation portion of the process, and now your transcribed text gets passed to the AI model, which starts applying your prompt:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_processing.png" alt="AI processing the transcribed text" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Once the AI finishes processing, it will paste the processed text at your cursor location:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_output.png" alt="Processed text pasted at cursor" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Grid Section -->
+            <div id="grid" class="instruction-section">
+                <div class="section-header" data-section="grid">
+                    <h2 class="section-title-inst">Grid</h2>
+                    <span class="toggle-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </span>
+                </div>
+                <div class="section-content">
+                    <p class="section-intro">Grid navigation allows you to navigate your screen using a numbered grid overlay.</p>
+
+                    <div class="grid-section">
+                        <div class="grid-instructions-wrapper">
+                            <ol class="grid-steps">
+                                <li>To activate the grid, say the activation word "go". This will display a range of numbered cells on your screen:</li>
+                            </ol>
+                            <div class="screenshot-container">
+                                <img src="assets/instructions_screenshots/grid.png" alt="Grid Overlay" class="centered-screenshot">
+                            </div>
+                            <ol class="grid-steps">
+                                <li>To navigate to your desired location on screen and click, simply say the number of the corresponding cell. It's very important you say the number as a <span class="important-text">sequence of single digits</span> (eg. 143 should be "one", "four", "three", not "one hundred and forty three").</li>
+                            </ol>
+                        </div>
+
+                        <p class="section-intro">Note, the above instructions are for the default "go" activated grid, which will move the mouse to your desired cell, and click. If you only want to move the mouse, without clicking, then repeat steps 1 and 2, but use the activation word "hover" instead of "go".</p>
+
+                        <!-- Grid Granularity -->
+                        <div class="grid-granularity-section">
+                            <h3 class="grid-granularity-title">Grid Granularity</h3>
+                            <p class="grid-granularity-description">By default the grid will display 500 cells on your screen.</p>
+                            <p class="grid-granularity-description">To adjust this amount go to the Settings tab in the sidebar and select the desired number of cells, then click Save.</p>
+                            <div class="screenshot-container">
+                                <img src="assets/instructions_screenshots/grid_settings.png" alt="Grid Settings Interface" class="centered-screenshot">
+                            </div>
+                        </div>
+
+                        <!-- Grid Override -->
+                        <div class="grid-override-section">
+                            <h3 class="grid-override-title">Grid Override</h3>
+                            <p class="grid-override-description">If you find yourself frequently shifting between a lot of cells and not a lot of cells, rather than changing settings all the time, you can just say "go" followed by the number of cells you want (eg. "go two hundred" or "go one thousand").</p>
+                            <p class="grid-override-description">This will display the requested number of cells instead of the default number.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Contact Us: vocalance.contact@gmail.com</p>
+        <p>&copy; 2025 Vocalance. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="instructions-script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vocalance - Modern, minimal, and clean">
+    <title>Vocalance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/vocalance_logo_full_size.png" alt="Vocalance Logo" class="logo-image">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#demo" class="nav-link">Demo</a></li>
+                <li><a href="#comparison" class="nav-link">Comparison</a></li>
+                <li><a href="#downloads" class="nav-link">Download</a></li>
+                <li class="nav-dropdown">
+                    <a href="instructions.html" class="nav-link">Instructions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="instructions.html#commands" class="dropdown-link">Commands</a></li>
+                        <li><a href="instructions.html#marks" class="dropdown-link">Marks</a></li>
+                        <li><a href="instructions.html#sounds" class="dropdown-link">Sounds</a></li>
+                        <li><a href="instructions.html#dictation" class="dropdown-link">Dictation</a></li>
+                        <li><a href="instructions.html#grid" class="dropdown-link">Grid</a></li>
+                    </ul>
+                </li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="tagline"><span class="key-text">Voice</span> First Computing</h1>
+            <p class="subtitle">Reimagining your device interaction</p>
+            <a href="#downloads" class="btn-cta">Try it out!</a>
+            
+            <!-- App Screenshots Carousel -->
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide" data-text="Tab Text 1">
+                        <img src="assets/app_screenshots/app_tab_1.png" alt="App Screenshot 1" class="carousel-image">
+                    </div>
+                    <div class="carousel-slide" data-text="Tab Text 2">
+                        <img src="assets/app_screenshots/app_tab_2.png" alt="App Screenshot 2" class="carousel-image">
+                    </div>
+                    <div class="carousel-slide" data-text="Tab Text 3">
+                        <img src="assets/app_screenshots/app_tab_3.png" alt="App Screenshot 3" class="carousel-image">
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+                
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-index="0" aria-label="Go to slide 1"></button>
+                    <button class="carousel-indicator" data-index="1" aria-label="Go to slide 2"></button>
+                    <button class="carousel-indicator" data-index="2" aria-label="Go to slide 3"></button>
+                </div>
+                
+                <div class="carousel-text-container">
+                    <p class="carousel-text active">Quickly navigate to custom spots on your screen with a simple voice command</p>
+                    <p class="carousel-text">Control clicking, scrolling and other commands with non verbal sounds</p>
+                    <p class="carousel-text">Add your own computer shortcuts and map them to any spoken word</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2 class="section-title">Key <span class="key-text">Features</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="assets/icons/lock.png" alt="Lock Icon" class="feature-icon">
+                <h3 class="feature-title">Private</h3>
+                <p class="feature-content">After first launch, all features work offline, and all processing happens on your device. No data ever leaves your computer.</p>
+            </div>
+            <div class="feature-card">
+                <img src="assets/icons/bolt1.png" alt="Bolt Icon" class="feature-icon">
+                <h3 class="feature-title">Fast</h3>
+                <p class="feature-content">Voice commands trigger in less than 200ms from when you stop speaking, which is much faster than other voice assistants.</p>
+            </div>
+            <div class="feature-card">
+                <img src="assets/icons/next.png" alt="Next Icon" class="feature-icon">
+                <h3 class="feature-title">Predictive</h3>
+                <p class="feature-content">Vocalance learns from your usage patterns to predict your next command and execute it before you finish speaking.</p>
+            </div>
+            <div class="feature-card">
+                <img src="assets/icons/gift_card.png" alt="Gift Card Icon" class="feature-icon">
+                <h3 class="feature-title">Free</h3>
+                <p class="feature-content">Vocalance is, and always will be, 100% free to use. All code is open source and public.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <h2 class="section-title"><span class="key-text">Demo</span></h2>
+        <p class="demo-subtitle">Check out the demo below to see Vocalance in action!</p>
+        <div class="video-container">
+            <div class="video-frame">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/Dm8m_ApuiVU"
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison-section">
+        <h2 class="section-title">How Does it <span class="key-text">Compare?</span></h2>
+        <div class="comparison-content">
+            <div class="comparison-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-column"></th>
+                            <th class="vocalance-column">Vocalance</th>
+                            <th>Talon Voice</th>
+                            <th>Utterly Voice</th>
+                            <th>Windows</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Latency</td>
+                            <td class="vocalance-value">200ms</td>
+                            <td>200ms</td>
+                            <td>500ms</td>
+                            <td>>1s</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Open Source</td>
+                            <td class="vocalance-value">✓</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Mark Navigation</td>
+                            <td class="vocalance-value">✓</td>
+                            <td>✗</td>
+                            <td>✓</td>
+                            <td>✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Grid Navigation</td>
+                            <td class="vocalance-value">✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Dictation</td>
+                            <td class="vocalance-value">✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Sound Commands</td>
+                            <td class="vocalance-value">✓</td>
+                            <td>✓</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Eye Tracking</td>
+                            <td class="vocalance-value">Coming Soon</td>
+                            <td>✓</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Predictive Grid</td>
+                            <td class="vocalance-value">✓</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Predictive Commands</td>
+                            <td class="vocalance-value">✓</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">AI Dictation</td>
+                            <td class="vocalance-value">✓</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                            <td>✗</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="downloads-section">
+        <h2 class="section-title"><span class="key-text">Download</span> Vocalance</h2>
+        <div class="downloads-container">
+            <div class="download-item">
+                <button class="btn-download-simple btn-disabled">Windows 10/11</button>
+                <p class="coming-soon-text">Coming soon</p>
+            </div>
+            <div class="download-item">
+                <button class="btn-download-simple btn-disabled">Mac OS</button>
+                <p class="coming-soon-text">Coming soon</p>
+            </div>
+        </div>
+        
+        <!-- Beta Notice -->
+        <div class="beta-notice">
+            <p class="beta-title">Vocalance Beta</p>
+            <p class="beta-description">Vocalance is currently in beta testing and open to all technical users who can build it from source.</p>
+            <p class="beta-description" style="margin-top: 1em;">To set up Vocalance on your computer, visit the <a href="https://github.com/rick12000/vocalance/" target="_blank" rel="noopener noreferrer" class="beta-link">GitHub repository</a> and follow the <strong>Installation</strong> section instructions in the README.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Contact Us: vocalance.contact@gmail.com</p>
+        <p>&copy; 2025 Vocalance. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
