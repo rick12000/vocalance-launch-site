@@ -58,6 +58,26 @@
     }
 
     /**
+     * Initialize smart dictation nested subsections
+     */
+    function initializeSmartDictationSubsections() {
+        const smartHeaders = document.querySelectorAll('.smart-dictation-header');
+        
+        smartHeaders.forEach(header => {
+            header.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent triggering parent subsection
+                
+                const smartSubsection = this.closest('.smart-dictation-subsection');
+                const content = smartSubsection.querySelector('.smart-dictation-content');
+                
+                // Toggle active state
+                this.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
+    }
+
+    /**
      * Handle deep linking to sections
      */
     function handleDeepLinking() {
@@ -226,6 +246,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         initializeCollapsibleSections();
         initializeCollapsibleSubsections();
+        initializeSmartDictationSubsections();
         initializeDropdownLinks();
         initializeSmoothScrolling();
         initializeKeyboardShortcuts();

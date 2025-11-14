@@ -642,6 +642,101 @@
     border: 1px solid rgba(0, 212, 255, 0.2);
 }
 
+/* Dictation Steps List */
+.dictation-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    counter-reset: dictation-step-counter;
+}
+
+.dictation-steps li {
+    counter-increment: dictation-step-counter;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    border-left: 3px solid #00d4ff;
+    color: rgba(255, 255, 255, 0.9);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.dictation-steps li::before {
+    content: counter(dictation-step-counter) ".";
+    position: absolute;
+    left: 1rem;
+    top: 0.75rem;
+    font-weight: 600;
+    color: #00d4ff;
+}
+
+.dictation-steps li:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-left-color: #4341b1;
+}
+
+.dictation-steps .screenshot-container {
+    margin: 1rem 0 0 0;
+}
+
+/* Smart Dictation Nested Subsections */
+.smart-dictation-subsection {
+    margin: 1.5rem 0;
+    background: rgba(67, 65, 177, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(67, 65, 177, 0.15);
+    overflow: hidden;
+}
+
+.smart-dictation-header {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-smooth);
+    position: relative;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.smart-dictation-header:hover {
+    background: rgba(67, 65, 177, 0.08);
+}
+
+.smart-dictation-subtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgba(0, 212, 255, 0.9);
+    margin: 0;
+}
+
+.toggle-icon-small {
+    color: #00d4ff;
+    transition: transform 0.3s ease;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smart-dictation-header.active .toggle-icon-small {
+    transform: rotate(180deg);
+}
+
+.smart-dictation-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    padding: 0 1.25rem;
+}
+
+.smart-dictation-content.active {
+    max-height: 10000px;
+    padding: 0 1.25rem 1.25rem;
+}
+
 /* Placeholder Text */
 .placeholder-text {
     font-size: 1rem;

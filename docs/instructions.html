@@ -629,12 +629,12 @@
                     </span>
                 </div>
                 <div class="section-content">
-                    <p class="section-intro">Vocalance offers three types of dictation modes, each optimized for different use cases.</p>
+                    <p class="section-intro">Vocalance offers four types of dictation modes, each optimized for different use cases.</p>
                     
-                    <!-- Dictation Mode -->
+                    <!-- Fast Dictation Mode -->
                     <div class="subsection">
-                        <div class="subsection-header" data-subsection="dictation-mode">
-                            <h3 class="subsection-title">Dictation</h3>
+                        <div class="subsection-header" data-subsection="fast-dictation">
+                            <h3 class="subsection-title">Fast Dictation</h3>
                             <span class="toggle-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -642,23 +642,33 @@
                             </span>
                         </div>
                         <div class="subsection-content">
-                            <div class="dictation-info">
-                                <div class="info-block">
-                                    <h4>Activation</h4>
-                                    <p>Say <code class="command-code">dictate</code> to activate dictation mode.</p>
-                                </div>
-                                <div class="info-block">
-                                    <h4>How It Works</h4>
-                                    <p>Once activated, speak your text. The dictation will automatically stop at your first pause. This mode is ideal for short, quick text entries.</p>
-                                </div>
-                            </div>
+                            <p class="section-intro">This is a quick dictation mode for when you want to perform a fast google search, or jot down a thought. To use it:</p>
+                            <ol class="dictation-steps">
+                                <li>Make sure your cursor is on a location in which you can type text:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_cursor.png" alt="Cursor ready for dictation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Say the activation phrase <code class="command-code">type</code>. This will start dictation.</li>
+                                <li>Wait for a pop up to appear in the bottom left of the screen, confirming Vocalance is listening for audio:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_listening.png" alt="Vocalance listening confirmation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Start speaking.</li>
+                                <li>As soon as you pause for more than 1 second, the dictation will self-interrupt, and Vocalance will paste what you said at the cursor location:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_output.png" alt="Dictation output pasted" class="centered-screenshot">
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
                     </div>
 
-                    <!-- Standard Dictation Mode -->
+                    <!-- Incremental Dictation Mode -->
                     <div class="subsection">
-                        <div class="subsection-header" data-subsection="standard-dictation">
-                            <h3 class="subsection-title">Standard Dictation</h3>
+                        <div class="subsection-header" data-subsection="incremental-dictation">
+                            <h3 class="subsection-title">Incremental Dictation</h3>
                             <span class="toggle-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -666,20 +676,67 @@
                             </span>
                         </div>
                         <div class="subsection-content">
-                            <div class="dictation-info">
-                                <div class="info-block">
-                                    <h4>Activation</h4>
-                                    <p>Say <code class="command-code">standard dictate</code> to activate standard dictation mode.</p>
-                                </div>
-                                <div class="info-block">
-                                    <h4>How It Works</h4>
-                                    <p>After activation, speak your text freely. The dictation will continue listening and transcribing until you say the stop command. Text is transcribed and output every two seconds as you speak.</p>
-                                </div>
-                                <div class="info-block">
-                                    <h4>Stopping Dictation</h4>
-                                    <p>Say <code class="command-code">stop dictating</code> to end the dictation session.</p>
-                                </div>
-                            </div>
+                            <p class="section-intro">This dictation mode is meant for every day dictation needs (notes, essays, messages, etc.). It's less accurate than Vocalance's Full Dictation mode, but allows you to edit text in real time and move the cursor and dictate dynamically. To use it:</p>
+                            <ol class="dictation-steps">
+                                <li>Make sure your cursor is on a location in which you can type text:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_cursor.png" alt="Cursor ready for dictation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Say the activation phrase <code class="command-code">green</code>. This will start dictation.</li>
+                                <li>Wait for a pop up to appear in the bottom left of the screen, confirming Vocalance is listening for audio:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_listening.png" alt="Vocalance listening confirmation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Start speaking.</li>
+                                <li>When you pause for more than 2 seconds, the words you said since the last 2 second pause will be pasted at the cursor location:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_output.png" alt="Dictation output pasted" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>When you're done with dictation, say the stop phrase <code class="command-code">amber</code>.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Full Dictation Mode -->
+                    <div class="subsection">
+                        <div class="subsection-header" data-subsection="full-dictation">
+                            <h3 class="subsection-title">Full Dictation</h3>
+                            <span class="toggle-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="subsection-content">
+                            <p class="section-intro">This dictation mode is meant for high quality transcription, but allows less real-time editing than Vocalance's Incremental Dictation mode. To use it:</p>
+                            <ol class="dictation-steps">
+                                <li>Make sure your cursor is on a location in which you can type text:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/dictation_cursor.png" alt="Cursor ready for dictation" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Say the activation phrase <code class="command-code">visual green</code>. This will start dictation.</li>
+                                <li>Wait for a pop up dictation window to appear on screen:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/visual_dictation_ui.png" alt="Visual dictation window" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Start speaking. The words you say will appear in near-real time in the dictation window:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/visual_dictation_grey.png" alt="Grey text in dictation window" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>At first text will appear as grey. As you speak more, or as you stay silent, grey text becomes white. This indicates the model is finished with that segment and is confident that's what you said:
+                                    <div class="screenshot-container">
+                                        <img src="assets/instructions_screenshots/visual_dictation_white.png" alt="White text in dictation window" class="centered-screenshot">
+                                    </div>
+                                </li>
+                                <li>Both white and grey text counts as valid transcription, but white text is unchangeable, while grey text can change as you speak.</li>
+                                <li>Once you're happy with what's in the dictation window (both white and grey text, you don't need to wait for everything to turn white), say the stop phrase <code class="command-code">amber</code>. This will automatically paste all the text in the dictation window at your cursor location.</li>
+                            </ol>
                         </div>
                     </div>
 
@@ -694,7 +751,96 @@
                             </span>
                         </div>
                         <div class="subsection-content">
-                            <p class="placeholder-text">Smart dictation uses AI to enhance your dictation with automatic formatting, punctuation, and context awareness. Documentation coming soon.</p>
+                            <p class="section-intro">This is Vocalance's most advanced and flexible dictation mode. Smart Dictation first transcribes everything you say, then passes the output to an AI model (this model is open source and runs entirely on your computer, no data leaves your machine), which will apply a clean up prompt to the text.</p>
+                            
+                            <div class="info-block">
+                                <h4>What's the Clean Up Prompt?</h4>
+                                <p>Vocalance ships with a default prompt that fixes grammar, punctuation, and improves clarity. However, you can specify any custom prompt you want! For example, you could create a prompt that formats text for emails, technical documentation, creative writing, or any other use case. Click on the 'Manage AI Prompts' section below to learn more!</p>
+                            </div>
+
+                            <!-- Manage AI Prompts Subsection -->
+                            <div class="smart-dictation-subsection">
+                                <div class="smart-dictation-header" data-subsection="manage-ai-prompts">
+                                    <h4 class="smart-dictation-subtitle">Manage AI Prompts</h4>
+                                    <span class="toggle-icon-small">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="smart-dictation-content">
+                                    <ol class="dictation-steps">
+                                        <li>You can manage the AI model's prompts from the Dictation tab of the Vocalance menu:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation.png" alt="Dictation tab in Vocalance menu" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Vocalance ships with a built-in 'Default' prompt, which makes the AI model clean up your grammar, punctuation and improve sentence clarity.</li>
+                                        <li>If you want to add your own prompt, select a Prompt Title and provide some Prompt Instructions for the AI Model in the Add Custom Prompt panel:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_prompt_creation.png" alt="Add Custom Prompt panel" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>When you click 'Add', the prompt will appear alongside the default prompt on the Manage Prompts panel:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_prompt_addition.png" alt="Prompt added to Manage Prompts" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>To use your new prompt, click on the radio button next to it:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_prompt_selection.png" alt="Prompt selected" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Vocalance will now use your prompt going forward instead of the default one. This is persistent, meaning smart dictation will continue to use this prompt until you select a different one.</li>
+                                        <li>You can add as many prompts as you want, and switch between them to match your use case.</li>
+                                    </ol>
+                                </div>
+                            </div>
+
+                            <!-- Start Dictating Subsection -->
+                            <div class="smart-dictation-subsection">
+                                <div class="smart-dictation-header" data-subsection="start-smart-dictating">
+                                    <h4 class="smart-dictation-subtitle">Start Dictating</h4>
+                                    <span class="toggle-icon-small">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="smart-dictation-content">
+                                    <p class="section-intro">For this walkthrough we will be using the 'Email' AI prompt we created in the 'Manage AI Prompts' section.</p>
+                                    <ol class="dictation-steps">
+                                        <li>Make sure your cursor is on a location in which you can type text:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/dictation_cursor.png" alt="Cursor ready for dictation" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Say the activation phrase <code class="command-code">smart green</code>. This will start dictation.</li>
+                                        <li>Wait for a pop up dictation window to appear on screen:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_ui.png" alt="Smart dictation window" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Start speaking. The words you say will appear in near-real time in the left dictation panel:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_grey.png" alt="Grey text in smart dictation window" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>At first text will appear as grey. As you speak more, or as you stay silent, grey text becomes white. This indicates the model is finished with that segment and is confident that's what you said.</li>
+                                        <li>Both white and grey text counts as valid transcription, but white text is unchangeable, while grey text can change as you speak.</li>
+                                        <li>Once you're happy with what's in the dictation window (both white and grey text, you don't need to wait for everything to turn white), say the stop phrase <code class="command-code">amber</code>. This interrupts the dictation portion of the process, and now your transcribed text gets passed to the AI model, which starts applying your prompt:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_processing.png" alt="AI processing the transcribed text" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                        <li>Once the AI finishes processing, it will paste the processed text at your cursor location:
+                                            <div class="screenshot-container">
+                                                <img src="assets/instructions_screenshots/smart_dictation_output.png" alt="Processed text pasted at cursor" class="centered-screenshot">
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
