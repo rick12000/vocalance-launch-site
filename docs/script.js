@@ -7,10 +7,12 @@
     'use strict';
 
     // =====================
-    // Navbar Scroll Effect
+    // Navbar Scroll Effect & Mobile Menu
     // =====================
     
     const navbar = document.getElementById('navbar');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
     let lastScrollTop = 0;
     
     function handleNavbarScroll() {
@@ -37,12 +39,49 @@
     });
 
     // =====================
+    // Mobile Hamburger Menu
+    // =====================
+    
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function() {
+            hamburgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Close mobile menu when a link is clicked
+    if (navLinks) {
+        const navItems = navLinks.querySelectorAll('.nav-link');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
+    // Handle dropdown menus in mobile
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    navDropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('.nav-link');
+        if (link) {
+            link.addEventListener('click', function(e) {
+                // On mobile, prevent default and toggle dropdown
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    });
+
+    // =====================
     // Smooth Scroll for Navigation Links
     // =====================
     
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinkElements = document.querySelectorAll('.nav-link');
     
-    navLinks.forEach(link => {
+    navLinkElements.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
@@ -233,24 +272,36 @@
         }, 600);
     }
     
-    // Initialize carousel
-    updateCarousel();
-    
-    // Event listeners
-    if (prevButton) {
-        prevButton.addEventListener('click', prevSlide);
-    }
-    
-    if (nextButton) {
-        nextButton.addEventListener('click', nextSlide);
-    }
-    
-    indicators.forEach((indicator) => {
-        indicator.addEventListener('click', function() {
-            const index = parseInt(this.getAttribute('data-index'));
-            goToSlide(index);
+    // Initialize carousel on DOM ready
+    if (slides.length > 0) {
+        updateCarousel();
+        
+        // Event listeners
+        if (prevButton) {
+            prevButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                prevSlide();
+            });
+        }
+        
+        if (nextButton) {
+            nextButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                nextSlide();
+            });
+        }
+        
+        indicators.forEach((indicator) => {
+            indicator.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const index = parseInt(this.getAttribute('data-index'));
+                goToSlide(index);
+            });
         });
-    });
+    }
     
     // Keyboard navigation
     document.addEventListener('keydown', function(e) {
