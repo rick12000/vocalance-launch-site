@@ -150,18 +150,32 @@
 
     .faq-content {
         padding: var(--spacing-md) var(--spacing-sm);
+        max-width: 100%;
     }
 
     .faq-header {
         padding: 1rem var(--spacing-sm);
+        flex-direction: row;
     }
 
     .faq-question {
-        font-size: 1.125rem;
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        margin: 0;
+        flex: 1;
+        text-align: left;
     }
 
     .faq-body.active {
         padding: var(--spacing-sm);
+    }
+
+    .faq-answer {
+        font-size: 1rem;
+    }
+
+    .toggle-icon {
+        flex-shrink: 0;
+        margin-left: 1rem;
     }
 
     .toggle-icon svg {
@@ -171,12 +185,50 @@
 }
 
 @media (max-width: 480px) {
+    .faq-hero {
+        min-height: 25vh;
+        padding: calc(60px + var(--spacing-sm)) var(--spacing-sm) var(--spacing-sm);
+    }
+
+    .tagline {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .faq-content {
+        padding: var(--spacing-sm) var(--spacing-xs);
+    }
+
+    .faq-item {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .faq-header {
+        padding: 0.75rem var(--spacing-xs);
+    }
+
     .faq-question {
-        font-size: 1rem;
+        font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    }
+
+    .faq-body {
+        padding: 0 var(--spacing-xs);
+    }
+
+    .faq-body.active {
+        padding: var(--spacing-xs);
     }
 
     .faq-answer {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .faq-answer a {
+        word-break: break-word;
     }
 
     .toggle-icon svg {

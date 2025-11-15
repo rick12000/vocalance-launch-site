@@ -16,7 +16,12 @@
                     <img src="assets/vocalance_logo_full_size.png" alt="Vocalance Logo" class="logo-image">
                 </a>
             </div>
-            <ul class="nav-links">
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#features" class="nav-link">Features</a></li>
                 <li><a href="#demo" class="nav-link">Demo</a></li>
                 <li><a href="#comparison" class="nav-link">Comparison</a></li>
@@ -52,13 +57,13 @@
                 </button>
                 
                 <div class="carousel-wrapper">
-                    <div class="carousel-slide" data-text="Tab Text 1">
+                    <div class="carousel-slide active" data-text="Tab Text 1">
                         <img src="assets/app_screenshots/app_tab_1.png" alt="App Screenshot 1" class="carousel-image">
                     </div>
-                    <div class="carousel-slide" data-text="Tab Text 2">
+                    <div class="carousel-slide next" data-text="Tab Text 2">
                         <img src="assets/app_screenshots/app_tab_2.png" alt="App Screenshot 2" class="carousel-image">
                     </div>
-                    <div class="carousel-slide" data-text="Tab Text 3">
+                    <div class="carousel-slide prev" data-text="Tab Text 3">
                         <img src="assets/app_screenshots/app_tab_3.png" alt="App Screenshot 3" class="carousel-image">
                     </div>
                 </div>
