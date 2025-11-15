@@ -21,12 +21,24 @@
     /* Typography */
     --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
+    /* Desktop Spacing System */
+    --section-padding-vertical: 3rem;
+    --section-padding-horizontal: 2rem;
+    --content-gap: 2rem;
+    --element-gap: 1rem;
+    --element-margin: 2rem;
+    --nav-link-spacing: 0.75rem;
+    --list-padding-left: 2rem;
+    
+    /* Hero Section Spacing (Desktop) */
+    --hero-padding-top: calc(80px + 4rem);
+    --hero-padding-bottom: 4rem;
+    --hero-spacing-internal: 2rem;
+    
+    /* Carousel Spacing (Desktop) */
+    --carousel-margin-top: 2rem;
+    --carousel-margin-bottom: 2rem;
+    --carousel-text-spacing: 2rem;
     
     /* Transitions */
     --transition-smooth: all 0.3s ease;
@@ -35,9 +47,57 @@
     touch-action: manipulation;
 }
 
+/* Mobile Spacing Overrides */
+@media (max-width: 768px) {
+    :root {
+        /* Mobile Spacing System */
+        --section-padding-vertical: 1.5rem;
+        --section-padding-horizontal: 1.25rem;
+        --content-gap: 1.5rem;
+        --element-gap: 1rem;
+        --element-margin: 1.25rem;
+        --list-padding-left: 1.25rem;
+        
+        /* Hero Section Spacing (Mobile) */
+        --hero-padding-top: calc(60px + 2rem);
+        --hero-padding-bottom: 1.5rem;
+        --hero-spacing-internal: 1.25rem;
+        
+        /* Carousel Spacing (Mobile) */
+        --carousel-margin-top: 1rem;
+        --carousel-margin-bottom: 1.5rem;
+        --carousel-text-spacing: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        /* Mobile (Small) Spacing System */
+        --section-padding-vertical: 1rem;
+        --section-padding-horizontal: 1rem;
+        --content-gap: 1.25rem;
+        --element-gap: 0.75rem;
+        --element-margin: 1rem;
+        --list-padding-left: 1rem;
+        
+        /* Hero Section Spacing (Small Mobile) */
+        --hero-padding-top: calc(60px + 1.5rem);
+        --hero-padding-bottom: 1rem;
+        --hero-spacing-internal: 1rem;
+        
+        /* Carousel Spacing (Small Mobile) */
+        --carousel-margin-top: 0.75rem;
+        --carousel-margin-bottom: 1.25rem;
+        --carousel-text-spacing: 0.5rem;
+    }
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 body {
@@ -48,6 +108,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
+    position: relative;
 }
 
 /* =====================
@@ -59,11 +120,14 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100vw;
     background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid var(--color-dark-gray);
     transition: var(--transition-smooth);
+    overflow: visible;
+    box-sizing: border-box;
 }
 
 .navbar.scrolled {
@@ -72,12 +136,15 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
     position: relative;
+    overflow: visible;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -102,8 +169,8 @@ body {
     transform: translateX(-50%);
     display: flex;
     list-style: none;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
+    gap: 0;
+    flex-wrap: nowrap;
     justify-content: center;
 }
 
@@ -114,14 +181,13 @@ body {
     font-weight: 500;
     transition: var(--transition-smooth);
     position: relative;
-    padding: 0.5rem 0;
+    padding: 0.5rem var(--nav-link-spacing);
     white-space: nowrap;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    display: inline-block;
-    min-height: 44px;
     display: flex;
     align-items: center;
+    min-height: 44px;
 }
 
 .nav-link::after {
@@ -234,10 +300,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: calc(80px + var(--spacing-lg)) var(--spacing-md) var(--spacing-lg);
+    padding: var(--hero-padding-top) var(--section-padding-horizontal) calc(var(--hero-padding-bottom) + var(--content-gap));
     background: linear-gradient(135deg, var(--color-black) 0%, var(--color-charcoal) 100%);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero::before {
@@ -257,16 +323,20 @@ body {
     max-width: 900px;
     position: relative;
     z-index: 1;
+    width: 100%;
+    padding: 0 0.5rem;
 }
 
 .tagline {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--hero-spacing-internal);
     letter-spacing: -1px;
     line-height: 1.2;
     color: var(--color-white);
     animation: fadeInUp 0.8s ease-out;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .key-text {
@@ -279,7 +349,7 @@ body {
 .subtitle {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: rgba(255, 255, 255, 0.7);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--hero-spacing-internal);
     font-weight: 400;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
@@ -321,12 +391,18 @@ body {
    ===================== */
 
 .carousel-container {
-    margin-top: var(--spacing-sm);
+    margin-top: var(--carousel-margin-top);
+    margin-bottom: calc(var(--carousel-margin-bottom) + var(--content-gap));
     width: 100%;
     max-width: 1200px;
     position: relative;
-    padding: 0;
+    padding: 0 var(--section-padding-horizontal);
     pointer-events: none;
+}
+
+/* Add spacing after carousel section before next section */
+.carousel-container + * {
+    margin-top: var(--content-gap);
 }
 
 .carousel-container > * {
@@ -472,7 +548,7 @@ body {
 
 .carousel-indicators {
     position: absolute;
-    bottom: 35px;
+    bottom: 45px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -510,7 +586,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    height: 30px;
+    height: auto;
+    margin-bottom: var(--carousel-text-spacing);
 }
 
 .carousel-text {
@@ -536,7 +613,7 @@ body {
    ===================== */
 
 .features-section {
-    padding: 2.5rem var(--spacing-md);
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -545,7 +622,7 @@ body {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--content-gap);
     letter-spacing: -1px;
     color: var(--color-white);
 }
@@ -553,13 +630,13 @@ body {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    gap: var(--content-gap);
+    margin-top: var(--element-gap);
 }
 
 .feature-card {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(20, 20, 28, 0.85) 100%);
-    padding: var(--spacing-md);
+    padding: var(--element-margin);
     border-radius: 16px;
     border: 2px solid transparent;
     position: relative;
@@ -638,7 +715,7 @@ body {
    ===================== */
 
 .comparison-section {
-    padding: 2rem var(--spacing-md);
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     max-width: 1200px;
     margin: 0 auto;
     min-height: 60vh;
@@ -821,7 +898,7 @@ body {
    ===================== */
 
 .downloads-section {
-    padding: 2rem var(--spacing-md) 5rem;
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal) calc(var(--section-padding-vertical) * 2);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -829,17 +906,17 @@ body {
 .downloads-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-lg);
+    align-items: stretch;
+    gap: var(--content-gap);
+    margin-top: var(--element-gap);
 }
 
 .download-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-sm);
-    height: 70px;
+    gap: var(--element-gap);
+    height: auto;
     justify-content: flex-start;
 }
 
@@ -852,9 +929,13 @@ body {
 }
 
 .btn-download-simple {
-    display: inline-block;
-    width: 200px;
-    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    width: 220px;
+    height: 56px;
+    padding: 0 2rem;
     background: linear-gradient(135deg, var(--color-electric-blue) 0%, var(--color-electric-blue-gradient-end) 100%);
     color: var(--color-white);
     text-decoration: none;
@@ -866,6 +947,8 @@ body {
     border: none;
     cursor: pointer;
     text-align: center;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .btn-download-simple:hover:not(.btn-disabled) {
@@ -890,8 +973,8 @@ body {
    ===================== */
 
 .beta-notice {
-    margin-top: var(--spacing-xl);
-    padding: var(--spacing-lg);
+    margin-top: calc(var(--content-gap) * 2);
+    padding: var(--element-margin);
     background: linear-gradient(135deg, rgba(67, 65, 177, 0.08) 0%, rgba(0, 212, 255, 0.05) 50%, rgba(177, 65, 102, 0.08) 100%);
     border: 1px solid rgba(67, 65, 177, 0.3);
     border-radius: 16px;
@@ -959,20 +1042,20 @@ body {
    ===================== */
 
 .demo-section {
-    padding: 2.5rem var(--spacing-md);
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .demo-section .section-title {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--element-gap);
 }
 
 .demo-subtitle {
     font-size: clamp(1rem, 2vw, 1.125rem);
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--element-gap);
     font-weight: 400;
 }
 
@@ -1048,9 +1131,27 @@ body {
    Responsive Design
    ===================== */
 
+/* Desktop spacing overrides for carousel - reduce extra spacing */
+@media (min-width: 769px) {
+    .hero {
+        padding: var(--hero-padding-top) var(--section-padding-horizontal) var(--hero-padding-bottom);
+    }
+
+    .carousel-container {
+        margin-bottom: var(--carousel-margin-bottom);
+    }
+}
+
 @media (max-width: 768px) {
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
     .nav-container {
         padding: 0.75rem 1rem;
+        max-width: 100%;
     }
 
     .hamburger-menu {
@@ -1062,33 +1163,63 @@ body {
         left: 0;
         top: 70px;
         flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         background-color: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(10px);
-        width: 100%;
+        width: 100vw;
+        max-width: 100vw;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         gap: 0;
-        padding: 1rem 0;
-        margin-left: 0;
-        border-bottom: 1px solid var(--color-dark-gray);
-        z-index: 999;
+        padding: 0;
+        margin: 0;
+        border: none;
+        z-index: 1001;
+        box-sizing: border-box;
+        display: flex;
     }
 
     .nav-links.active {
         transform: translateX(0);
     }
 
+    li .nav-link {
+        font-size: 1.5rem;
+        padding-left: 2.5rem;
+    }
+    
     .nav-link {
-        font-size: 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
         display: block;
-        padding: 1rem 1.5rem;
-        white-space: nowrap;
-        min-height: 48px;
-        align-items: center;
+        width: 100%;
+        padding: 1.25rem 1.5rem;
+        padding-left: 2.5rem;
+        white-space: normal;
+        min-height: auto;
+        text-align: left;
+        color: var(--color-white);
+        touch-action: manipulation;
     }
 
     .nav-link::after {
         display: none;
+    }
+    
+    .nav-dropdown {
+        width: 100%;
+    }
+    
+    .nav-dropdown .dropdown-link {
+        font-size: 1.3rem;
+    }
+    
+    .nav-dropdown > .nav-link {
+        font-size: 1.5rem;
     }
 
     button {
@@ -1119,27 +1250,34 @@ body {
     }
 
     .dropdown-link {
-        padding: 0.75rem 2.5rem;
+        padding: 1rem 1.5rem;
+        padding-left: 3.5rem;
+        font-size: 1.3rem;
+        width: 100%;
+        text-align: left;
+        display: block;
+        font-weight: 500;
     }
     
     .hero {
-        padding: calc(80px + var(--spacing-md)) var(--spacing-sm) var(--spacing-md);
+        padding: calc(80px + 1rem) 0.75rem 1rem;
         min-height: auto;
     }
 
     .carousel-container {
-        margin-top: var(--spacing-xs);
+        margin-top: 0.5rem;
+        padding: 0 0.5rem;
     }
 
     .carousel-wrapper {
-        height: 350px;
+        height: 320px;
         overflow: visible;
     }
 
     .carousel-slide {
-        width: 280px;
-        margin-left: -140px;
-        margin-top: -140px;
+        width: 260px;
+        margin-left: -130px;
+        margin-top: -130px;
     }
 
     .carousel-slide.active {
@@ -1147,117 +1285,21 @@ body {
     }
 
     .carousel-slide.prev {
-        transform: scale(0.65) translateX(-280px);
+        transform: scale(0.65) translateX(-260px);
     }
 
     .carousel-slide.next {
-        transform: scale(0.65) translateX(280px);
+        transform: scale(0.65) translateX(260px);
     }
 
     .carousel-btn {
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
     }
 
     .carousel-btn svg {
         width: 20px;
         height: 20px;
-    }
-
-    .carousel-indicators {
-        bottom: 25px;
-    }
-
-    .carousel-indicator {
-        min-height: 44px;
-        min-width: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .carousel-text {
-        font-size: clamp(0.9rem, 1.5vw, 1rem);
-    }
-    
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .features-section,
-    .comparison-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
-    }
-
-    .downloads-container {
-        flex-direction: column;
-        gap: var(--spacing-md);
-    }
-}
-
-@media (max-width: 480px) {
-    html {
-        scroll-padding-top: 60px;
-    }
-
-    /* Prevent iOS from zooming on input focus */
-    input,
-    textarea,
-    select,
-    button {
-        font-size: 16px !important;
-    }
-
-    .logo-image {
-        height: 40px;
-    }
-
-    .nav-container {
-        padding: 0.75rem 0.5rem;
-    }
-
-    .nav-link {
-        font-size: 0.75rem;
-        padding: 0.25rem 0.25rem;
-    }
-
-    .tagline {
-        font-size: clamp(1.75rem, 5vw, 2.5rem);
-    }
-
-    .subtitle {
-        font-size: clamp(0.9rem, 1.8vw, 1rem);
-    }
-
-    .btn-cta {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.95rem;
-    }
-
-    .hero {
-        padding: calc(60px + var(--spacing-sm)) var(--spacing-sm) var(--spacing-sm);
-    }
-
-    .carousel-wrapper {
-        height: 280px;
-    }
-
-    .carousel-slide {
-        width: 220px;
-        margin-left: -110px;
-        margin-top: -110px;
-    }
-
-    .carousel-slide.active {
-        transform: scale(1) translateX(0);
-    }
-
-    .carousel-slide.prev {
-        transform: scale(0.55) translateX(-250px);
-    }
-
-    .carousel-slide.next {
-        transform: scale(0.55) translateX(250px);
     }
 
     .carousel-indicators {
@@ -1268,11 +1310,111 @@ body {
     .carousel-indicator {
         width: 10px;
         height: 10px;
+        min-height: auto;
+        min-width: auto;
+        display: inline-block;
+    }
+
+    .carousel-text {
+        font-size: 0.9rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Standardize spacing between sections on mobile */
+    .features-section,
+    .comparison-section,
+    .demo-section,
+    .downloads-section {
+        padding: 2rem 0.75rem;
+        margin-top: var(--content-gap);
+    }
+
+    /* Features section doesn't need extra top margin */
+    .features-section {
+        margin-top: 0;
+    }
+
+    /* Remove excessive min-height on comparison section for mobile */
+    .comparison-section {
+        min-height: auto;
+    }
+
+    .feature-card {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .downloads-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Prevent iOS from zooming on input focus */
+    input,
+    textarea,
+    select,
+    button {
+        font-size: 16px !important;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .logo-image {
+        height: 40px;
+    }
+
+    .nav-container {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.25rem;
+    }
+
+    .carousel-wrapper {
+        height: 250px;
+    }
+
+    .carousel-slide {
+        width: 200px;
+        margin-left: -100px;
+        margin-top: -70px;
+    }
+
+    .carousel-slide.prev {
+        transform: scale(0.55) translateX(-220px);
+    }
+
+    .carousel-slide.next {
+        transform: scale(0.55) translateX(220px);
+    }
+
+    .carousel-indicators {
+        bottom: 20px;
+        gap: 5px;
+    }
+
+    .carousel-indicator {
+        width: 8px;
+        height: 8px;
+        min-height: unset;
+        min-width: unset;
     }
 
     .carousel-btn {
-        width: 32px;
-        height: 32px;
+        width: 36px;
+        height: 36px;
     }
 
     .carousel-btn svg {
@@ -1281,63 +1423,60 @@ body {
     }
 
     .carousel-btn-prev {
-        left: 3px;
+        left: 5px;
     }
 
     .carousel-btn-next {
-        right: 3px;
+        right: 5px;
     }
 
-    .carousel-text-container {
-        height: 50px;
+    .comparison-table-container {
+        margin: 0.75rem 0;
+        padding: 0;
+        border-radius: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
     }
 
-    .carousel-text {
-        font-size: 0.85rem;
+    .comparison-table {
+        font-size: 0.6rem;
+        min-width: 280px;
+        width: auto;
     }
 
-    .section-title {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.25rem 0.15rem;
+        font-size: 0.6rem;
+        min-width: 45px;
     }
 
-    .feature-card {
-        padding: var(--spacing-sm);
-    }
-
-    .feature-icon {
-        width: 48px;
-        height: 48px;
-    }
-
-    .feature-title {
-        font-size: 1.25rem;
-    }
-
-    .feature-content {
-        font-size: 0.9rem;
+    .feature-name {
+        min-width: 50px;
+        font-size: 0.6rem;
     }
 
     .downloads-container {
         flex-direction: column;
-        gap: var(--spacing-md);
-    }
-
-    .download-item {
-        height: auto;
+        gap: var(--element-gap);
     }
 
     .btn-download-simple {
-        width: 160px;
-        padding: 0.75rem 1.5rem;
+        min-width: 180px;
+        width: 180px;
+        height: 48px;
+        padding: 0 1.5rem;
         font-size: 1rem;
     }
 
-    .video-frame {
-        max-width: 100%;
+    .coming-soon-text {
+        font-size: 0.75rem;
     }
 
-    .demo-subtitle {
-        font-size: 1rem;
+    .footer {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.75rem;
     }
 }
 
