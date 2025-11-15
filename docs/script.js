@@ -49,17 +49,6 @@
         });
     }
 
-    // Close mobile menu when a link is clicked
-    if (navLinks) {
-        const navItems = navLinks.querySelectorAll('.nav-link');
-        navItems.forEach(item => {
-            item.addEventListener('click', function() {
-                hamburgerMenu.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-    }
-
     // Handle dropdown menus in mobile
     const navDropdowns = document.querySelectorAll('.nav-dropdown');
     navDropdowns.forEach(dropdown => {
@@ -69,11 +58,35 @@
                 // On mobile, prevent default and toggle dropdown
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
+                    e.stopPropagation();
                     dropdown.classList.toggle('active');
                 }
             });
         }
     });
+
+    // Close mobile menu when a non-dropdown link is clicked
+    if (navLinks) {
+        const navItems = navLinks.querySelectorAll('.nav-link');
+        navItems.forEach(item => {
+            // Only close menu if it's not a dropdown parent
+            if (!item.parentElement.classList.contains('nav-dropdown')) {
+                item.addEventListener('click', function() {
+                    hamburgerMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            }
+        });
+        
+        // Close menu when clicking dropdown children
+        const dropdownLinks = navLinks.querySelectorAll('.dropdown-link');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
 
     // =====================
     // Smooth Scroll for Navigation Links

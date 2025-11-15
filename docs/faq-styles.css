@@ -4,11 +4,11 @@
 
 /* FAQ Hero Section */
 .faq-hero {
-    min-height: 35vh;
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: calc(80px + var(--spacing-lg)) var(--spacing-md) var(--spacing-md);
+    padding: var(--hero-padding-top) var(--section-padding-horizontal) var(--hero-padding-bottom);
     background: linear-gradient(135deg, var(--color-black) 0%, var(--color-charcoal) 100%);
     position: relative;
     overflow: hidden;
@@ -28,7 +28,7 @@
 
 /* Main FAQ Content */
 .faq-content {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -39,12 +39,12 @@
 
 /* FAQ Items */
 .faq-item {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--element-gap);
     background: linear-gradient(135deg, rgba(40, 40, 45, 0.8) 0%, rgba(45, 45, 50, 0.8) 100%);
     border-radius: 12px;
     position: relative;
     transition: all 0.3s ease;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .faq-item::before {
@@ -71,7 +71,7 @@
 
 /* FAQ Header (Question) */
 .faq-header {
-    padding: 1.5rem var(--spacing-md);
+    padding: 1.5rem var(--element-margin);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -81,6 +81,7 @@
     position: relative;
     z-index: 2;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 60px;
 }
 
 .faq-header:hover {
@@ -88,10 +89,11 @@
 }
 
 .faq-question {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-white);
     margin: 0;
+    padding-right: 1rem;
 }
 
 .toggle-icon {
@@ -113,13 +115,19 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
-    padding: 0 var(--spacing-md);
+    padding: 0;
 }
 
 .faq-body.active {
     max-height: 1000px;
-    padding: var(--spacing-md);
+    padding: var(--element-margin);
     background: rgba(30, 30, 35, 0.4);
+}
+
+/* All direct children of faq-body have ZERO extra indent - same level */
+.faq-body > * {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .faq-answer {
@@ -127,6 +135,12 @@
     color: rgba(255, 255, 255, 0.75);
     margin: 0;
     line-height: 1.7;
+}
+
+.faq-body > ol,
+.faq-body > ul {
+    padding-left: 1.5em;
+    margin: var(--element-gap) 0;
 }
 
 /* FAQ Links */
@@ -144,29 +158,34 @@
 /* Responsive Design for FAQ */
 @media (max-width: 768px) {
     .faq-hero {
-        min-height: 30vh;
-        padding: calc(80px + var(--spacing-md)) var(--spacing-sm) var(--spacing-sm);
+        min-height: 35vh;
+        padding: var(--hero-padding-top) var(--section-padding-horizontal) var(--hero-padding-bottom);
     }
 
     .faq-content {
-        padding: var(--spacing-md) var(--spacing-sm);
+        padding: var(--section-padding-vertical) var(--section-padding-horizontal);
         max-width: 100%;
     }
 
+    .faq-item {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     .faq-header {
-        padding: 1rem var(--spacing-sm);
+        padding: 1rem var(--element-margin);
         flex-direction: row;
     }
 
     .faq-question {
-        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        font-size: 1rem;
         margin: 0;
         flex: 1;
         text-align: left;
     }
 
     .faq-body.active {
-        padding: var(--spacing-sm);
+        padding: var(--element-margin);
     }
 
     .faq-answer {
@@ -186,40 +205,28 @@
 
 @media (max-width: 480px) {
     .faq-hero {
-        min-height: 25vh;
-        padding: calc(60px + var(--spacing-sm)) var(--spacing-sm) var(--spacing-sm);
-    }
-
-    .tagline {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-    }
-
-    .subtitle {
-        font-size: 0.9rem;
+        min-height: 35vh;
+        padding: var(--hero-padding-top) var(--section-padding-horizontal) var(--hero-padding-bottom);
     }
 
     .faq-content {
-        padding: var(--spacing-sm) var(--spacing-xs);
-    }
-
-    .faq-item {
-        margin-bottom: var(--spacing-sm);
+        padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     }
 
     .faq-header {
-        padding: 0.75rem var(--spacing-xs);
+        padding: 0.875rem var(--element-margin);
     }
 
     .faq-question {
-        font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+        font-size: 0.95rem;
     }
 
     .faq-body {
-        padding: 0 var(--spacing-xs);
+        padding: 0;
     }
 
     .faq-body.active {
-        padding: var(--spacing-xs);
+        padding: var(--element-margin);
     }
 
     .faq-answer {

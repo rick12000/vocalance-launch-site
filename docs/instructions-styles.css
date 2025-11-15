@@ -4,11 +4,11 @@
 
 /* Instructions Hero Section */
 .instructions-hero {
-    min-height: 35vh;
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: calc(80px + var(--spacing-lg)) var(--spacing-md) var(--spacing-md);
+    padding: var(--hero-padding-top) var(--section-padding-horizontal) var(--hero-padding-bottom);
     background: linear-gradient(135deg, var(--color-black) 0%, var(--color-charcoal) 100%);
     position: relative;
     overflow: hidden;
@@ -28,9 +28,14 @@
 
 /* Main Instructions Content */
 .instructions-content {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--section-padding-vertical) var(--section-padding-horizontal);
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Add spacing after hero section */
+.instructions-content > .instruction-section:first-child {
+    margin-top: var(--content-gap);
 }
 
 .content-container {
@@ -88,12 +93,12 @@
 
 /* Instruction Sections */
 .instruction-section {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--element-gap);
     background: linear-gradient(135deg, rgba(40, 40, 45, 0.8) 0%, rgba(45, 45, 50, 0.8) 100%);
     border-radius: 12px;
     position: relative;
     transition: all 0.3s ease;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .instruction-section::before {
@@ -119,7 +124,7 @@
 }
 
 .section-header {
-    padding: 1.5rem var(--spacing-md);
+    padding: 1.5rem var(--element-margin);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -129,6 +134,7 @@
     position: relative;
     z-index: 2;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 60px;
 }
 
 .section-header:hover {
@@ -136,10 +142,11 @@
 }
 
 .section-title-inst {
-    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-white);
     margin: 0;
+    padding-right: 1rem;
 }
 
 .toggle-icon {
@@ -160,30 +167,51 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
-    padding: 0 var(--spacing-md);
+    padding: 0;
 }
 
 .section-content.active {
     max-height: 15000px;
-    padding: var(--spacing-md);
+    padding: var(--element-margin);
     background: rgba(30, 30, 35, 0.4);
+}
+
+/* ALL direct children of section-content have ZERO extra indent - they're all at depth 1 */
+.section-content > * {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .section-intro {
     font-size: 1.0625rem;
     color: rgba(255, 255, 255, 0.75);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--element-gap);
     line-height: 1.7;
 }
 
-/* Subsections */
+/* List elements - same indent as their parent text, just marker offset */
+.section-content > ol,
+.section-content > ul {
+    padding-left: 1.5em;
+    margin: var(--element-gap) 0;
+}
+
+.subsection-content > ol,
+.subsection-content > ul {
+    padding-left: 1.5em;
+    margin: var(--element-gap) 0;
+}
+
+/* Subsections - depth 2, so they don't get extra margin */
 .subsection {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--element-gap);
+    margin-left: 0;
+    margin-right: 0;
     background: linear-gradient(135deg, rgba(40, 40, 45, 0.6) 0%, rgba(45, 45, 50, 0.6) 100%);
     border-radius: 10px;
     position: relative;
     transition: all 0.3s ease;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .subsection::before {
@@ -209,7 +237,7 @@
 }
 
 .subsection-header {
-    padding: 1rem 1.25rem;
+    padding: 1rem var(--element-margin);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -218,6 +246,7 @@
     position: relative;
     z-index: 2;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 50px;
 }
 
 .subsection-header:hover {
@@ -225,25 +254,26 @@
 }
 
 .subsection-title {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 500;
     background: linear-gradient(135deg, #4341b1 0%, #00d4ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
+    padding-right: 1rem;
 }
 
 .subsection-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
-    padding: 0 1.25rem;
+    padding: 0;
 }
 
 .subsection-content.active {
     max-height: 10000px;
-    padding: 0 1.25rem 1.25rem;
+    padding: var(--element-margin);
 }
 
 /* Command Table */
@@ -298,13 +328,22 @@
     line-height: 1.6;
 }
 
-/* Parametrization Section - Non-collapsible */
+/* Parametrization Section - Non-collapsible, same level as subsections */
 .parametrization-section {
-    margin-top: var(--spacing-md);
-    padding: 1.5rem;
+    margin-top: var(--content-gap);
+    margin-bottom: var(--element-gap);
+    padding: var(--element-margin);
     background: rgba(67, 65, 177, 0.08);
     border-radius: 8px;
     border: 1px solid rgba(67, 65, 177, 0.2);
+}
+
+/* Add spacing before subsections that follow major sections */
+.parametrization-section + .subsection,
+.info-block + .subsection,
+.subsection + .parametrization-section,
+.subsection + .info-block {
+    margin-top: var(--content-gap);
 }
 
 .parametrization-title {
@@ -314,25 +353,25 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin: 0 0 1rem 0;
+    margin: 0 0 var(--element-gap) 0;
 }
 
 .parametrization-description {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1rem;
+    margin-bottom: var(--element-gap);
     line-height: 1.6;
 }
 
 .parametrization-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 1rem 0;
+    margin: 0 0 var(--element-gap) 0;
 }
 
 .parametrization-list li {
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
+    padding: var(--element-gap) var(--element-margin);
+    margin-bottom: var(--element-gap);
     background: rgba(0, 0, 0, 0.15);
     border-radius: 6px;
     border-left: 3px solid #00d4ff;
@@ -604,10 +643,17 @@
 
 .info-block {
     background: rgba(0, 0, 0, 0.12);
-    padding: 1rem 1.25rem;
+    padding: var(--element-margin);
     border-radius: 6px;
     border-left: 3px solid #00d4ff;
     transition: var(--transition-smooth);
+    margin-bottom: var(--element-gap);
+}
+
+/* First info-block in a section should have top spacing */
+.section-content > .info-block:first-of-type,
+.parametrization-section + .info-block {
+    margin-top: var(--content-gap);
 }
 
 .info-block:hover {
@@ -622,7 +668,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 var(--element-gap) 0;
 }
 
 .info-block p {
@@ -750,36 +796,46 @@
 /* Responsive Design for Instructions */
 @media (max-width: 768px) {
     .instructions-hero {
-        min-height: 30vh;
-        padding: calc(80px + var(--spacing-md)) var(--spacing-sm) var(--spacing-sm);
+        min-height: 35vh;
+        padding: var(--hero-padding-top) var(--section-padding-horizontal) var(--hero-padding-bottom);
     }
 
     .instructions-content {
-        padding: var(--spacing-md) var(--spacing-sm);
+        padding: var(--section-padding-vertical) var(--section-padding-horizontal);
+    }
+
+    .instruction-section {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .section-header {
-        padding: 1rem var(--spacing-sm);
+        padding: 1rem var(--element-margin);
     }
 
     .section-title-inst {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
     .section-content.active {
-        padding: var(--spacing-sm);
+        padding: var(--element-margin);
+    }
+
+    .subsection {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .subsection-header {
-        padding: 0.875rem 1rem;
+        padding: 0.875rem var(--element-margin);
     }
 
     .subsection-title {
-        font-size: 1.125rem;
+        font-size: 0.95rem;
     }
 
     .subsection-content.active {
-        padding: 0 1rem 1rem;
+        padding: var(--element-margin);
     }
 
     .command-row {
@@ -817,12 +873,24 @@
 }
 
 @media (max-width: 480px) {
+    .instructions-hero {
+        min-height: 35vh;
+    }
+
+    .section-header {
+        padding: 0.875rem var(--element-margin);
+    }
+
     .section-title-inst {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .subsection-header {
+        padding: 0.75rem var(--element-margin);
     }
 
     .subsection-title {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .command-phrase code {
